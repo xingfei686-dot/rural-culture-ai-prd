@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="乡村文化通 AI Agent 产品作品集：从文化问答需求、RAG 知识库到 Agent Workflow 与测试迭代的完整 PRD。" />
+  <meta name="theme-color" content="#163b35" />
+  <title>乡村文化通｜AI Agent 产品作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="readingBar"></span></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark">乡</span>
+      <span>乡村文化通</span>
+    </a>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="siteNav">目录</button>
+    <nav id="siteNav" aria-label="页面目录">
+      <a href="#problem">问题</a>
+      <a href="#solution">方案</a>
+      <a href="#architecture">架构</a>
+      <a href="#testing">测试</a>
+      <a href="#reflection">复盘</a>
+    </nav>
+    <a class="header-cta" href="https://www.coze.cn/store/agent/7696162329666404371?bot_id=true" target="_blank" rel="noreferrer">体验 Agent ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-art" src="./assets/rural-culture-hero.png" alt="山水村落与数字知识节点交织的插画" />
+      <div class="hero-wash"></div>
+      <div class="hero-content">
+        <p class="eyebrow">AI PRODUCT CASE · 2026</p>
+        <h1>让乡村文化<br />被看见、被理解</h1>
+        <p class="hero-summary">基于 Coze 与豆包大模型构建的乡村文化问答 Agent。通过 RAG 知识库、Workflow 编排与 Prompt 优化，把分散的文化资料转化为可追溯、易理解的对话体验。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#overview">阅读完整 PRD</a>
+          <a class="button button-ghost" href="https://www.coze.cn/store/agent/7696162329666404371?bot_id=true" target="_blank" rel="noreferrer">在线体验 ↗</a>
+        </div>
+        <ul class="hero-meta" aria-label="项目概况">
+          <li><span>项目类型</span><strong>个人 AI 产品实践</strong></li>
+          <li><span>核心能力</span><strong>RAG · Workflow · Prompt</strong></li>
+          <li><span>交付形态</span><strong>可对话的 Coze Agent</strong></li>
+        </ul>
+      </div>
+      <a class="scroll-cue" href="#overview" aria-label="向下阅读"><span></span>SCROLL</a>
+    </section>
+
+    <section class="section overview" id="overview">
+      <div class="section-label"><span>01</span> 项目概览</div>
+      <div class="overview-grid">
+        <div>
+          <p class="kicker">WHY THIS PRODUCT</p>
+          <h2>文化资料很多，<br />但“找到”不等于“读懂”</h2>
+        </div>
+        <div class="lead-copy">
+          <p>地方文化内容往往散落在网页、文章与地方志中。普通用户需要跨来源检索、判断可信度，再把专业叙述转化成容易理解的信息。</p>
+          <p>“乡村文化通”以自然语言问答作为入口，让用户可以像向一位熟悉当地的讲解员提问，并通过知识检索约束回答范围、标注依据。</p>
+        </div>
+      </div>
+      <div class="scope-strip">
+        <div><b>目标用户</b><span>文化旅行者、学生与教师、地方文化爱好者</span></div>
+        <div><b>核心任务</b><span>快速了解乡村历史、习俗、技艺与文化故事</span></div>
+        <div><b>产品边界</b><span>文化知识辅助与线索导航，不替代权威考证</span></div>
+      </div>
+    </section>
+
+    <section class="section problem-section" id="problem">
+      <div class="section-label light"><span>02</span> 用户问题</div>
+      <div class="section-heading inverse">
+        <p class="kicker">USER INSIGHT</p>
+        <h2>从“搜资料”到“获得可信答案”<br />中间隔着三道门槛</h2>
+      </div>
+      <div class="pain-grid">
+        <article>
+          <span class="big-number">01</span>
+          <h3>内容分散</h3>
+          <p>信息分布在不同平台和文档中，检索路径长，同一主题难以形成连贯认识。</p>
+        </article>
+        <article>
+          <span class="big-number">02</span>
+          <h3>表达有距离</h3>
+          <p>地方志与研究资料术语密集，缺少面向普通用户的解释、背景与延伸线索。</p>
+        </article>
+        <article>
+          <span class="big-number">03</span>
+          <h3>可信度难判断</h3>
+          <p>生成式回答可能混淆传说与史实，需要检索约束、来源提示与不确定性表达。</p>
+        </article>
+      </div>
+      <div class="job-story">
+        <span>核心用户故事</span>
+        <blockquote>“当我对一个村落、习俗或传统技艺产生兴趣时，我希望用自然语言快速提问，获得清晰、有依据且能继续追问的解释。”</blockquote>
+      </div>
+    </section>
+
+    <section class="section solution-section" id="solution">
+      <div class="section-label"><span>03</span> 产品方案</div>
+      <div class="section-heading">
+        <p class="kicker">SOLUTION</p>
+        <h2>一位随问随答的<br />乡村文化数字向导</h2>
+        <p>以问答为主界面，以知识库为事实底座，以工作流控制回答过程。</p>
+      </div>
+      <div class="feature-layout">
+        <div class="feature-list" role="tablist" aria-label="核心能力">
+          <button class="feature-tab active" data-feature="ask" role="tab" aria-selected="true">
+            <span>01</span><div><strong>文化问答</strong><small>理解自然语言问题与上下文</small></div>
+          </button>
+          <button class="feature-tab" data-feature="retrieve" role="tab" aria-selected="false">
+            <span>02</span><div><strong>知识检索</strong><small>从已整理资料中召回相关片段</small></div>
+          </button>
+          <button class="feature-tab" data-feature="explain" role="tab" aria-selected="false">
+            <span>03</span><div><strong>通俗解释</strong><small>重组信息并补充必要背景</small></div>
+          </button>
+          <button class="feature-tab" data-feature="trace" role="tab" aria-selected="false">
+            <span>04</span><div><strong>来源提示</strong><small>帮助用户理解答案依据与边界</small></div>
+          </button>
+        </div>
+        <div class="chat-demo" aria-live="polite">
+          <div class="chat-top"><span></span><b>乡村文化通</b><em>AI</em></div>
+          <div class="chat-body" id="chatBody"></div>
+          <div class="chat-input"><span>继续追问...</span><b>↑</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section architecture-section" id="architecture">
+      <div class="section-label light"><span>04</span> Agent 架构</div>
+      <div class="section-heading inverse narrow">
+        <p class="kicker">WORKFLOW & RAG</p>
+        <h2>把一次回答，拆成可控制的产品流程</h2>
+        <p>Workflow 负责“怎么走”，知识库负责“依据什么答”，Prompt 负责“以什么方式答”。</p>
+      </div>
+      <div class="pipeline" aria-label="Agent 回答流程">
+        <div class="pipeline-node"><i>1</i><b>问题输入</b><span>用户意图与上下文</span></div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node"><i>2</i><b>问题识别</b><span>判断主题与检索需求</span></div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node accent"><i>3</i><b>知识检索</b><span>召回相关资料片段</span></div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node"><i>4</i><b>答案生成</b><span>整合、解释与降噪</span></div>
+        <span class="pipeline-arrow">→</span>
+        <div class="pipeline-node"><i>5</i><b>来源标记</b><span>提示依据与不确定性</span></div>
+      </div>
+      <div class="architecture-notes">
+        <article>
+          <p>01 / KNOWLEDGE</p>
+          <h3>知识库策略</h3>
+          <ul>
+            <li>按“地区—主题—内容类型”组织资料</li>
+            <li>切分时保留标题、出处与上下文</li>
+            <li>优先使用可核验、来源明确的材料</li>
+          </ul>
+        </article>
+        <article>
+          <p>02 / PROMPT</p>
+          <h3>回答策略</h3>
+          <ul>
+            <li>先给直接结论，再解释背景与关联</li>
+            <li>区分史实、民间传说与合理推断</li>
+            <li>材料不足时明确说明，不强行生成</li>
+          </ul>
+        </article>
+        <article>
+          <p>03 / EXPERIENCE</p>
+          <h3>对话策略</h3>
+          <ul>
+            <li>识别宽泛问题并主动收窄范围</li>
+            <li>提供可继续追问的相关主题</li>
+            <li>保持友好、克制、非说教式表达</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section testing-section" id="testing">
+      <div class="section-label"><span>05</span> 测试与迭代</div>
+      <div class="section-heading">
+        <p class="kicker">BAD CASE LOOP</p>
+        <h2>不只验证“能不能答”，<br />更验证“答得是否可靠”</h2>
+      </div>
+      <div class="test-matrix">
+        <div class="matrix-head"><span>测试类型</span><span>典型风险</span><span>优化方向</span></div>
+        <div><b>事实型问题</b><span>年代、人物、地名混淆</span><span>强化检索依据与来源约束</span></div>
+        <div><b>宽泛型问题</b><span>回答空泛、信息堆砌</span><span>先澄清范围，再分层回答</span></div>
+        <div><b>知识库外问题</b><span>模型补全不存在的细节</span><span>设置拒答边界与不确定性表达</span></div>
+        <div><b>连续追问</b><span>丢失上文主体或地区</span><span>保留关键上下文，校验指代</span></div>
+      </div>
+      <div class="iteration-loop">
+        <div><b>收集</b><span>记录异常回答与用户问题</span></div>
+        <i>→</i><div><b>归因</b><span>知识、检索、Prompt 或流程</span></div>
+        <i>→</i><div><b>优化</b><span>补资料、调参数、改指令</span></div>
+        <i>→</i><div><b>回归</b><span>用同类问题复测效果</span></div>
+      </div>
+    </section>
+
+    <section class="section reflection-section" id="reflection">
+      <div class="section-label light"><span>06</span> 项目复盘</div>
+      <div class="reflection-grid">
+        <div class="reflection-title">
+          <p class="kicker">REFLECTION</p>
+          <h2>AI 产品的价值，<br />不止是接入模型</h2>
+        </div>
+        <div class="reflection-copy">
+          <p>这个项目让我把 Agent 从“能对话的 Demo”推进到“有知识边界、有流程控制、可持续迭代的产品”。真正影响体验的，不是单次生成有多惊艳，而是知识、检索、指令和测试能否形成闭环。</p>
+          <div class="learning-list">
+            <div><span>01</span><b>从功能出发</b><p>把模糊的“文化助手”拆成具体用户任务与回答流程。</p></div>
+            <div><span>02</span><b>从边界出发</b><p>承认资料覆盖有限，用透明表达换取长期信任。</p></div>
+            <div><span>03</span><b>从迭代出发</b><p>用 Bad Case 驱动知识库、Prompt 与 Workflow 联动优化。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p>乡村文化通 · AI AGENT</p>
+      <h2>现在，去问一个<br />关于乡村文化的问题</h2>
+      <div class="hero-actions centered">
+        <a class="button button-light" href="https://www.coze.cn/store/agent/7696162329666404371?bot_id=true" target="_blank" rel="noreferrer">打开在线体验 ↗</a>
+        <button class="button button-outline-light" id="printButton">保存为 PDF</button>
+      </div>
+      <small>本页面为个人 AI 产品实践作品集。Agent 输出仅供文化学习与信息参考。</small>
+    </section>
+  </main>
+
+  <footer>
+    <div><span class="brand-mark small">乡</span><b>乡村文化通</b></div>
+    <p>AI 产品作品集 · Coze / 豆包大模型 / RAG / Workflow</p>
+    <button id="copyButton">复制本页链接</button>
+  </footer>
+
+  <div class="toast" id="toast" role="status">链接已复制</div>
+  <script src="./script.js"></script>
+</body>
+</html>
