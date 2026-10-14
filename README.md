@@ -17,7 +17,7 @@
 5. 在 Build and deployment 中将 Source 设为 Deploy from a branch。
 6. 分支选择 main，目录选择 /(root)，点击 Save。
 7. 等待约 1–3 分钟，访问：
-   https://你的GitHub用户名.github.io/rural-culture-ai-prd/
+   https://xingfei686-dot.github.io/rural-culture-ai-prd/
 
 ### 方式二：Git 命令
 
@@ -25,7 +25,7 @@ git init
 git add .
 git commit -m Publish-rural-culture-AI-PRD
 git branch -M main
-git remote add origin https://github.com/你的GitHub用户名/rural-culture-ai-prd.git
+git remote add origin https://github.com/xingfei686-dot/rural-culture-ai-prd.git
 git push -u origin main
 
 然后按方式一的第 4–7 步开启 GitHub Pages。
@@ -40,8 +40,9 @@ git push -u origin main
 
 乡村文化通｜AI 文化知识助手
 在线体验：https://www.coze.cn/store/agent/7696162329666404371?bot_id=true
-产品 PRD：https://你的GitHub用户名.github.io/rural-culture-ai-prd/
+产品 PRD：https://xingfei686-dot.github.io/rural-culture-ai-prd/
 
 ## 视觉素材
 
 封面插画由 OpenAI 图像生成工具生成，用于本项目网页视觉展示。
+
